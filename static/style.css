@@ -4,10 +4,15 @@ body {
     background-color: #fff8dc;
 }
 
-input, button {
+input, button, textarea {
     margin: 10px 0;
     padding: 10px;
     width: 300px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
 }
 
 .note {
