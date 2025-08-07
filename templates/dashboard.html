@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Smart Notes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <h3>Your Notes:</h3>
+    {% for note in notes %}
+        <div class="note">
+            <strong>{{ note.title }}</strong>
+            <p>{{ note.content }}</p>
+        </div>
+    {% else %}
+        <p>No notes available.</p>
+    {% endfor %}
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

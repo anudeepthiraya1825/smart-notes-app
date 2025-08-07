@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #fff8dc;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 300px;
+}
+
+.note {
+    background: #ffebcd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
