@@ -77,3 +77,23 @@ def add_note():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    return redirect('/')
+
+@app.route('/add_note', methods=['GET', 'POST'])
+def add_note():
+    if 'user_id' not in session:
+        return redirect('/login')
+    
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+        cursor.execute("INSERT INTO notes (user_id, title, content) VALUES (%s, %s, %s)",
+                       (session['user_id'], title, content))
+        db.commit()
+        flash("Note added successfully!")
+        return redirect('/dashboard')
+    
+    return render_template('add_note.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
